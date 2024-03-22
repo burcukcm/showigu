@@ -1,6 +1,6 @@
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:switch_kullanimi/Constants/app_constants.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'showigu',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
@@ -24,66 +24,78 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-
-
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
 
-
-
   @override
   Widget build(BuildContext context) {
-    var ekranbilgisi=MediaQuery.of(context);
-    final double ekranyukseklik =ekranbilgisi.size.height;
-    final double ekrangenislik=ekranbilgisi.size.width;
+
+    var screeninfo=MediaQuery.of(context);
+    final double screenheight =screeninfo.size.height;
+    final double screenwidth=screeninfo.size.width;
 
     return  Scaffold(
-      backgroundColor:const Color.fromRGBO(200, 200, 200, 1.0),
+      backgroundColor:AppColors.bgcolor,
     body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Container(
-              width: ekrangenislik,
-              height: ekranyukseklik / 2,
+              width: screenwidth,
+              height: screenheight / 2,
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: AppColors.firstcolor,
                 image: const DecorationImage(
-                  image: AssetImage("resimler/logo.jpeg"),
+                  image: AssetImage(AppImages.image1),
                   fit: BoxFit.cover,
                 ),
                 border: Border.all(
-                  color: Colors.white,
+                  color: AppColors.firstcolor,
                 ),
                 borderRadius: const BorderRadius.only(
-                  bottomLeft: Radius.circular(30),
-                  bottomRight: Radius.circular(30),
+                  bottomLeft: BorderSize.circular30,
+                  bottomRight: BorderSize.circular30,
                 ),
-
               ),
             ),
              const Padding(
-              padding: EdgeInsets.only(right :20.0 ,left: 20.0,top: 30.0),
+              padding: EdgeInsets.only(right:AppSize.padding20, left:AppSize.padding20, top:AppSize.padding30),
               child: TextField(
                 decoration: InputDecoration(
                   icon: Icon(Icons.account_circle_rounded),
-                  labelText: "UserName",
+                  labelText: AppStrings.userText,
                 ),
               ),
              ),
              const Padding(
-              padding: EdgeInsets.only(right :20.0 ,left: 20.0),
+              padding: EdgeInsets.only(right :AppSize.padding20 ,left:AppSize.padding20),
               child: TextField(
                 decoration: InputDecoration(
                   icon: Icon(Icons.lock),
-                  labelText: "Password",
+                  labelText: AppStrings.lockText,
                 ),
                 obscureText: true,
               ),
             ),
+            TextButton( child:const Text(AppStrings.forgotText,style: TextStyle(color: Colors.red),),
+            onPressed:() {
+
+             },
+            ),
+             SizedBox(
+               width: screenwidth/2,
+               child: ElevatedButton(
+                style: ButtonStyle(
+                  backgroundColor:MaterialStateProperty.all<Color>(AppColors.buttonbg),
+                ),
+                child:const Text(AppStrings.loginText,style: TextStyle(color:AppColors.firstcolor),),
+                onPressed: (){
+                },
+               ),
+             ),
           ],
         ),
       ),
