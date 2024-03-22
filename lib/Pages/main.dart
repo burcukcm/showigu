@@ -61,6 +61,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
                 ),
               ),
             ),
+
              const Padding(
               padding: EdgeInsets.only(right:AppSize.padding20, left:AppSize.padding20, top:AppSize.padding30),
               child: TextField(

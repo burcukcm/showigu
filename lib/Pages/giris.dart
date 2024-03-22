@@ -41,6 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
               padding:EdgeInsets.only(top: 90.0),
               child: SizedBox(
                 width: screenWidth,
+
                 height: screenHeight / 2,
                 child: Image.asset("resimler/abc.png"),
               ),
