@@ -10,7 +10,8 @@ abstract class AppColors{
 }
 
 abstract class AppImages{
-  static const String image1= "resimler/logo.jpeg";
+  static const String image2= "resimler/logo.jpeg";
+  static const String image1="resimler/abc.png";
 }
 
 abstract class BorderSize {

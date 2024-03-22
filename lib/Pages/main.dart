@@ -18,17 +18,17 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: MyHomePage(),
+      home: AnaSayfa(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
+class AnaSayfa extends StatefulWidget {
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<AnaSayfa> createState() => _AnaSayfaState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _AnaSayfaState extends State<AnaSayfa> {
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
               decoration: BoxDecoration(
                 color: AppColors.firstcolor,
                 image: const DecorationImage(
-                  image: AssetImage(AppImages.image1),
+                  image: AssetImage(AppImages.image2),
                   fit: BoxFit.cover,
                 ),
                 border: Border.all(
@@ -81,15 +81,13 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             TextButton( child:const Text(AppStrings.forgotText,style: TextStyle(color: Colors.red),),
-            onPressed:() {
-
-             },
+            onPressed:() {},
             ),
              SizedBox(
                width: screenwidth/2,
                child: ElevatedButton(
                 style: ButtonStyle(
-                  backgroundColor:MaterialStateProperty.all<Color>(AppColors.buttonbg),
+                  backgroundColor: MaterialStateProperty.all<Color>(Color.fromARGB(255, 65, 196, 182),),
                 ),
                 child:const Text(AppStrings.loginText,style: TextStyle(color:AppColors.firstcolor),),
                 onPressed: (){
